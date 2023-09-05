@@ -36,8 +36,5 @@ Development dependencies include TypeScript type definitions for several librari
 ### Performance Monitoring
 The application uses the `web-vitals` library to measure and monitor the performance of the application in the real world.
 
-### Contributing
-Contributions to the Fight Club frontend application are welcome. Please make sure to test your code thoroughly and adhere to the coding standards and guidelines provided by the technologies used in this project.
-
 ### License
-This project is licensed under the MIT License.
+This project is licensed under the Apache License.
