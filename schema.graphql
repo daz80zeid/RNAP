@@ -1,0 +1,1212 @@
+# This file was generated based on ".graphqlconfig". Do not edit manually.
+
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+type Advertiser {
+    additionally: String
+    blog: [BlogType!]
+    contactPerson: String
+    contactPhone: String
+    countLikes: Float
+    createdAt: DateTime!
+    followers: [FollowerType!]
+    id: String!
+    isActive: Boolean!
+    likes: [likeType!]
+    subscribers: [FollowerType!]
+    updatedAt: DateTime!
+    user: User!
+}
+
+type AgreementFight {
+    additionalRules: String
+    clothes: [String!]
+    countRounds: String
+    createdAt: DateTime!
+    fightDate: String
+    fightStyle: [String!]
+    fighterFirst: String!
+    fighterFirstRefused: Boolean
+    fighterSecond: String!
+    fighterSecondAccepted: Boolean
+    fighterSecondRefused: Boolean
+    hands: [String!]
+    id: String!
+    isActive: Boolean!
+    limitInParterre: Boolean
+    name: String
+    playgroundsSize: [String!]
+    playgroundsType: [String!]
+    timeBreak: String
+    timeParterre: String
+    timeRound: String
+    timeStart: String
+    updatedAt: DateTime!
+    useHelmet: Boolean
+    usePatch: Boolean
+}
+
+type BlogType {
+    about: String!
+    createDate: String!
+    id: String!
+    name: String!
+    photo: String!
+    updateDate: String!
+}
+
+type Comments {
+    createdAt: DateTime!
+    description: String!
+    id: String!
+    isActive: Boolean!
+    news: News!
+    updatedAt: DateTime!
+    userId: String!
+}
+
+type FailedFight {
+    additionalRules: String
+    clothes: [String!]
+    countRounds: String
+    createdAt: DateTime!
+    fightDate: String
+    fightStyle: [String!]
+    fighterFirst: String
+    fighterFirstRefused: Boolean
+    fighterSecond: String
+    fighterSecondRefused: Boolean
+    hands: [String!]
+    id: String!
+    isActive: Boolean!
+    limitInParterre: Boolean
+    name: String
+    playgroundsSize: [String!]
+    playgroundsType: [String!]
+    timeBreak: String
+    timeParterre: String
+    timeRound: String
+    timeStart: String
+    updatedAt: DateTime!
+    useHelmet: Boolean
+    usePatch: Boolean
+}
+
+type Fan {
+    additionally: String
+    blog: [BlogType!]
+    countLikes: Float
+    createdAt: DateTime!
+    dateOfBirth: String
+    followers: [FollowerType!]
+    id: String!
+    isActive: Boolean!
+    likes: [likeType!]
+    location: String
+    preference: [String!]
+    subscribers: [FollowerType!]
+    updatedAt: DateTime!
+    user: User!
+}
+
+type FightFollowers {
+    createdAt: DateTime!
+    fights: Fights
+    id: String!
+    isActive: Boolean!
+    updatedAt: DateTime!
+    userId: String!
+}
+
+type FightNotification {
+    agreementFight: AgreementFight
+    channelName: String!
+    createdAt: DateTime!
+    eventName: String!
+    fights: Fights
+    id: String!
+    invites: Invites
+    isActive: Boolean!
+    notificationData: String!
+    read: Boolean!
+    streams: Streams
+    tournaments: Tournaments
+    updatedAt: DateTime!
+}
+
+type Fighter {
+    additionally: String
+    agent: String
+    basicStyle: [String!]
+    belongingClub: String
+    blog: [BlogType!]
+    countLikes: Float
+    createdAt: DateTime!
+    dateOfBirth: String
+    followers: [FollowerType!]
+    height: Float
+    id: String!
+    inSports: String
+    independentFighter: Boolean
+    isActive: Boolean!
+    isProfessional: Boolean
+    isReadyFighter: Boolean
+    likes: [likeType!]
+    location: String
+    nickname: String
+    occupation: String
+    promoVideo: String
+    readyToFightStyle: [String!]
+    sportCategory: [String!]
+    subscribers: [FollowerType!]
+    trainer: String
+    updatedAt: DateTime!
+    user: User
+    weight: Float
+}
+
+type Fights {
+    additionalRules: String
+    clothes: [String!]
+    countRounds: String
+    createdAt: DateTime!
+    fightDate: String
+    fightStyle: [String!]
+    fighterFirst: String
+    fighterFirstWin: Boolean
+    fighterSecond: String
+    fighterSecondWin: Boolean
+    finished: Boolean
+    followers: [FollowerType!]
+    hands: [String!]
+    id: String!
+    invite: [InviteType!]
+    isActive: Boolean!
+    lastVisitFighterFirst: String
+    lastVisitFighterSecond: String
+    lastVisitReferee: String
+    lastVisitRing: String
+    lastVisitVideographer: String
+    limitInParterre: Boolean
+    name: String
+    photoURL: String
+    playgroundsSize: [String!]
+    playgroundsType: [String!]
+    published: Boolean
+    rateFight: [RateFightType!]
+    readyToFinish: Boolean
+    readyToPublish: Boolean
+    referee: String
+    ring: String
+    streamURL: String
+    subscribers: [FollowerType!]!
+    timeBreak: String
+    timeParterre: String
+    timeRound: String
+    timeStart: String
+    tournaments: Tournaments!
+    updatedAt: DateTime!
+    useHelmet: Boolean
+    usePatch: Boolean
+    videographer: String
+}
+
+type FileType {
+    filename: String!
+    id: String!
+    path: String!
+    source: String!
+    userId: String!
+}
+
+type FollowerType {
+    id: String!
+}
+
+type InviteType {
+    accept: Boolean!
+    id: String!
+    role: String!
+    userId: String!
+    viewed: Boolean!
+}
+
+type Invites {
+    accept: Boolean!
+    createdAt: DateTime!
+    event: String
+    fights: Fights
+    id: String!
+    initiator: String
+    isActive: Boolean!
+    refusal: Boolean!
+    role: String!
+    tournaments: Tournaments
+    updatedAt: DateTime!
+    userId: String!
+}
+
+type Media {
+    createdAt: DateTime!
+    fights: Fights!
+    id: String!
+    initiatorUserId: String!
+    isActive: Boolean!
+    mimetype: String!
+    originalName: String!
+    updatedAt: DateTime!
+    url: String!
+}
+
+type Mutation {
+    "This resolver generates Bearer token for other services"
+    authFirebase(input: AuthWithFirebaseArgsInput!): String!
+    "This resolver generates Bearer token for other services"
+    authVk(input: AuthWithVKArgsInput!): String!
+    "This resolver banned user"
+    banUserByAdmin(input: BanUserArgsInput!): User!
+    "This resolver choose winer in fight"
+    chooseWinerOfFight(input: ChooseWinFightArgsInput!): Fights!
+    creatStreamTournmanet(input: CreateStreamsArgsInput!): Boolean!
+    "This resolver create agrement fight in db"
+    createAgreementFights(input: UpdateAgreementFightInput!): AgreementFight!
+    createCandidateOfTournament(input: InviteUserArgsInput!): Invites!
+    createInvite(input: InviteUserArgsInput!): Invites!
+    createNewMediaInFightById(input: CreateMediaArgsInput!): Media!
+    createNewMediaInNewsById(input: CreateMediaNewsArgsInput!): NewsMedia!
+    "This resolver update media"
+    createNewMediaInUser(input: CreateMediaInUserArgsInput!): UserMedia!
+    "This resolver create news"
+    createNews(input: CreateNewsArgsInput!): News!
+    "This resolver create comments by news id"
+    createNewsCommentByNewsId(input: CreateNewsCommentByNewsIdArgsInput!): Comments!
+    "This resolver create dislike for news"
+    createNewsDislikeByNewsId(input: CreateNewsRateArgsInput!): NewsRate!
+    "This resolver create like for news"
+    createNewsLikeByNewsId(input: CreateNewsRateArgsInput!): NewsRate!
+    createStream(input: CreateStreamArgsInput!): Stream!
+    createTournamentFights(input: CreateTournamentFightArgsInput!): Fights!
+    createTournamentInvites(input: InviteUserArgsInput!): Invites!
+    "This resolver create Tournaments  in db"
+    createTournaments(input: UpdateTournametsInput!): Tournaments!
+    "This resolver delete comment by comment id"
+    deleteCommentByAdmin(input: GetNewsByIdArgsInput!): Boolean!
+    "This resolver delete comment by comment id"
+    deleteMyNewsCommentByCommentId(input: DeleteNewsMyCommentByCommentIdArgsInput!): Boolean!
+    "This resolver delete news"
+    deleteNewsById(input: DeleteNewsArgsInput!): Boolean!
+    "This resolver delete comment by comment id"
+    deleteNewsCommentByCommentId(input: GetNewsByIdArgsInput!): Boolean!
+    deleteUserByAdmin(input: GetRecordByIdInput!): Boolean!
+    "This resolver banned user"
+    getFightersExel: String!
+    "returns RateFighter"
+    rateFighters(input: CreateRateFightersArgsInput!): RateFighter!
+    removeMediaInFightById(input: GetByIdInput!): Boolean!
+    removeMediaInNewsById(input: GetNewsByIdArgsInput!): Boolean!
+    removeMediaInUserById(input: GetRecordByIdInput!): Boolean!
+    startStream(input: CreateStreamArgsInput!): Boolean!
+    startStreamFight(input: CreateStreamsArgsInput!): Boolean!
+    startStreamTournament(input: CreateStreamsArgsInput!): Boolean!
+    stopStream(input: CreateStreamArgsInput!): Boolean!
+    stopStreamFight(input: CreateStreamsArgsInput!): Boolean!
+    stopStreamTournmanet(input: CreateStreamsArgsInput!): Boolean!
+    "This resolver update follower in fight"
+    subscribeFight(input: UpdateSubscribeFightArgsInput!): FightFollowers!
+    "This resolver update follower in fight"
+    subscribeTournament(input: UpdateSubsribeTournamentArgsInput!): TournamentFollowers!
+    "This resolver update follower in fight"
+    unSubscribeFight(input: GetByIdInput!): Boolean!
+    "This resolver update follower in fight"
+    unSubscribeTournament(input: GetByIdInput!): Boolean!
+    unbanUserByAdmin(input: GetRecordByIdInput!): User!
+    "This resolver update agrement fight in db"
+    updateAgreementFights(input: UpdateAgreementFightInput!): AgreementFight!
+    "This resolver update blog"
+    updateBlogs(input: UpdateBlogArgsInput!): [String!]!
+    "This resolver update Ring time table"
+    updateDateRings(input: UpdateRingDateArgsInput!): [String!]!
+    updateFightNotification(input: UpdateNotificationByIdArgsInput!): FightNotification!
+    "This resolver update fight in db"
+    updateFights(input: UpdateFightInput!): Fights!
+    "This resolver update Referee"
+    updateFollowers(input: UpdateFollowerArgsInput!): User!
+    updateInvite(input: UpdateInviteArgsInput!): Fights!
+    "This resolver update Advertiser"
+    updateLikeAdvertisers(input: UpdateLikeArgsInput!): Advertiser!
+    "This resolver update Fan"
+    updateLikeFans(input: UpdateLikeArgsInput!): Fan!
+    "This resolver update Fighter"
+    updateLikeFighters(input: UpdateLikeArgsInput!): Fighter!
+    "This resolver update Referee"
+    updateLikeReferees(input: UpdateLikeArgsInput!): User!
+    "This resolver update Ring"
+    updateLikeRings(input: UpdateLikeArgsInput!): Ring!
+    "This resolver update VideoGrapher"
+    updateLikeVideoGraphers(input: UpdateLikeArgsInput!): VideoGrapher!
+    "This resolver update news"
+    updateNews(input: UpdateNewsArgsInput!): News!
+    "This resolver update or create user like or dislike by news id"
+    updateNewsRate(input: CreateNewsRateArgsInput!): NewsRate!
+    updateRateFight(input: RateFightArgsInput!): [String!]!
+    updateTournamentInvites(input: UpdateInviteArgsInput!): Invites!
+    "This resolver update Tournaments  in db"
+    updateTournaments(input: UpdateTournametsInput!): Tournaments!
+    "This resolver update user"
+    updateUser(input: UpdateUserArgsInput!): User!
+    "This resolver update Advertiser"
+    updateUserAdvertiser(input: UpdateAdvertiserArgsInput!): Advertiser!
+    "This resolver update Fan"
+    updateUserFan(input: UpdateFanArgsInput!): Fan!
+    "This resolver update Fighter"
+    updateUserFighter(input: UpdateFighterArgsInput!): Fighter!
+    "This resolver update Referee"
+    updateUserReferee(input: UpdateRefereeArgsInput!): Referee!
+    "This resolver update Ring"
+    updateUserRing(input: UpdateRingArgsInput!): Ring!
+    "This resolver update Videographer"
+    updateUserVideographer(input: UpdateVideographerArgsInput!): VideoGrapher!
+}
+
+type News {
+    createdAt: DateTime!
+    description: String
+    event: String
+    eventDate: String
+    id: String!
+    idFight: String
+    idTournament: String
+    isActive: Boolean!
+    newsType: String
+    shortDescription: String
+    subtitle: String
+    title: String
+    updatedAt: DateTime!
+    userId: String
+}
+
+type NewsMedia {
+    createdAt: DateTime!
+    id: String!
+    initiatorUserId: String!
+    isActive: Boolean!
+    mimetype: String!
+    news: News!
+    originalName: String!
+    updatedAt: DateTime!
+    url: String!
+}
+
+type NewsRate {
+    action: String!
+    createdAt: DateTime!
+    id: String!
+    isActive: Boolean!
+    news: News!
+    updatedAt: DateTime!
+    userId: String!
+}
+
+type Options {
+    basicStyle: [String!]!
+    playgroundsSize: [String!]!
+    playgroundsType: [String!]!
+    preference: [String!]!
+    readyToFightStyle: [String!]!
+    refereeCategory: [String!]!
+    singleCombatsType: [String!]!
+    sportCategory: [String!]!
+}
+
+type Query {
+    "This resolver find fight by id in db"
+    getAgreementFightById(input: GetFightByIdInput!): AgreementFight!
+    "This resolver find all Agreement Fight for user in db"
+    getAllAgreementFightById(input: GetFightByIdInput!): [AgreementFight]!
+    "This resolver find all Agreement Fight in db"
+    getAllAgreementFights: [AgreementFight]!
+    "This resolver return comments by news id"
+    getAllComment: [Comments]!
+    "This resolver find all Failed Fight for user in db"
+    getAllFailedFightById(input: GetFightByIdInput!): [FailedFight]!
+    getAllFans: [User]!
+    getAllFighters: [User]!
+    "This resolver find all figths in db"
+    getAllFights: [Fights]!
+    "This resolver find all Fight for user in db"
+    getAllFightsByUserId(input: GetFightByIdInput!): [Fights]!
+    getAllFiles: [FileType]!
+    getAllFollower(input: UpdateFollowerArgsInput!): [User]!
+    getAllLikesAdvertiser(input: UpdateLikeArgsInput!): [User]!
+    getAllLikesFan(input: UpdateLikeArgsInput!): [User]!
+    getAllLikesFighter(input: UpdateLikeArgsInput!): [User]!
+    getAllLikesReferee(input: UpdateLikeArgsInput!): [User]!
+    getAllLikesRing(input: UpdateLikeArgsInput!): [User]!
+    getAllLikesVideographer(input: UpdateLikeArgsInput!): [User]!
+    "This resolver create news"
+    getAllNews: [News]!
+    "return all RateFighter"
+    getAllRateFighter: [RateFighter]!
+    getAllRecommendsFighters: [Fighter]!
+    getAllReferees: [User]!
+    getAllRings: [User]!
+    "return all StaginessFighterRating"
+    getAllStaginessFighterRating: [StaginessFighterRating]!
+    getAllSubscriber(input: UpdateFollowerArgsInput!): [User]!
+    "This resolver find all figths in db"
+    getAllTest: [Fights]!
+    "This resolver find all Tournaments in db"
+    getAllTournaments: [Tournaments]!
+    "This resolver find tour by id in db"
+    getAllTournamentsByUserId(input: GetFightByIdInput!): [Tournaments]!
+    getAllUsers: [User]!
+    getAllVideographers: [User]!
+    "This resolver get blog"
+    getBlogById(input: GetBlogByIdArgsInput!): [String!]!
+    "This resolver get blog"
+    getBlogs(input: GetBlogArgsInput!): [String!]!
+    "This resolver get date of Ring"
+    getDateRings(input: GetDateRingArgsInput!): [String!]!
+    "This resolver find failed fight by id in db"
+    getFailedFightById(input: GetFightByIdInput!): FailedFight!
+    "This resolver find fight by id in db"
+    getFightById(input: GetFightByIdInput!): Fights!
+    getFighterStats(input: GetByIdInput!): StatsFighters!
+    "This resolver find all my invites"
+    getFightersTournament(input: GetFightByIdInput!): [TournamentFighters]!
+    "This resolver get follower"
+    getFightsWhereIamSubscribed(input: GetFightByIdInput!): [FightFollowers]!
+    getFileById(input: GetFileByIdArgsInput!): FileType!
+    "This resolver get follower"
+    getFollowers(input: UpdateFollowerArgsInput!): [String!]!
+    "This resolver get follower"
+    getFollowersFight(input: GetFightByIdInput!): [String!]!
+    "This resolver find all my invites"
+    getInitiatorInvites(input: GetFightByIdInput!): [Invites]!
+    "This resolver find all Fight for user in db"
+    getInitiatorMediaById(input: GetByIdInput!): [Media]!
+    "This resolver find all news for user in db"
+    getInitiatorNewsMediaById(input: GetNewsByIdArgsInput!): [NewsMedia]!
+    "This resolver getInvite"
+    getInvites(input: GetFightByIdInput!): [String!]!
+    "This resolver get Likes of Advertisers"
+    getLikeAdvertisers(input: UpdateLikeArgsInput!): [String!]!
+    "This resolver get Likes of Fan"
+    getLikeFans(input: UpdateLikeArgsInput!): [String!]!
+    "This resolver get Likes of Fighter"
+    getLikeFighters(input: UpdateLikeArgsInput!): [String!]!
+    "This resolver get Likes of Referee"
+    getLikeReferees(input: UpdateLikeArgsInput!): [String!]!
+    "This resolver get Likes of Ring"
+    getLikeRings(input: UpdateLikeArgsInput!): [String!]!
+    "This resolver get Likes of Videographer"
+    getLikeVideoGraphers(input: UpdateLikeArgsInput!): [String!]!
+    getMe: User!
+    "This resolver find all Fight for user in db"
+    getMediaInFightById(input: GetFightByIdInput!): [Media]!
+    "This resolver find all news for user in db"
+    getMediaInNewsById(input: GetNewsByIdArgsInput!): [NewsMedia]!
+    "This resolver find all media for user in db"
+    getMediaInUserById(input: GetRecordByIdInput!): [UserMedia]!
+    "This resolver find all my notification"
+    getMyFightNotifications(input: GetByIdInput!): [FightNotification]!
+    "This resolver find all my invites"
+    getMyInvites(input: GetFightByIdInput!): [Invites]!
+    "This resolver return comments by userId and newsId"
+    getMyNewsCommentsByNewsId(input: GetNewsMyCommentsByNewsIdArgsInput!): [Comments]!
+    "This resolver get rating "
+    getMyRate(input: GetRatingArgsInput!): String!
+    "This resolver return news by id"
+    getNewsById(input: GetNewsByIdArgsInput!): News!
+    "This resolver return news by user id"
+    getNewsByUserId(input: GetNewsByIdArgsInput!): [News]!
+    "This resolver return comments by news id"
+    getNewsCommentsByNewsId(input: GetNewsByIdArgsInput!): [Comments]!
+    "This resolver return dislikes by newsId"
+    getNewsDislikesByNewsId(input: GetNewsByIdArgsInput!): [NewsRate]!
+    "This resolver return count of dislikes by newsId"
+    getNewsDislikesCountByNews(input: GetNewsByIdArgsInput!): Float!
+    "This resolver return likes by newsId"
+    getNewsLikesByNewsId(input: GetNewsByIdArgsInput!): [NewsRate]!
+    "This resolver return count of likes by newsId"
+    getNewsLikesCountByNews(input: GetNewsByIdArgsInput!): Float!
+    "This resolver return all dislikes by usersId"
+    getNewsMyDislikes(input: GetNewsByIdArgsInput!): [NewsRate]!
+    "This resolver return user dislikes by news id"
+    getNewsMyDislikesByNewsId(input: GetNewsMyLikesByNewsIdArgsInput!): [NewsRate]!
+    "This resolver return all likes by usersId"
+    getNewsMyLikes(input: GetNewsByIdArgsInput!): [NewsRate]!
+    "This resolver return user likes by news id"
+    getNewsMyLikesByNewsId(input: GetNewsMyLikesByNewsIdArgsInput!): [NewsRate]!
+    "This resolver return count of dislikes by userId"
+    getNewsUserDislikesCount(input: GetNewsByIdArgsInput!): Float!
+    "This resolver return count of likes by userId"
+    getNewsUserLikesCount(input: GetNewsByIdArgsInput!): Float!
+    getOption: Options
+    "returns fighterStaginess"
+    getStaginsessFighterRating(input: GetByIdInput!): Float!
+    getStream(input: CreateStreamArgsInput!): String!
+    getStreamFight(input: CreateStreamsArgsInput!): Streams!
+    getStreamTournament(input: CreateStreamsArgsInput!): Streams!
+    "This resolver get Subscribers"
+    getSubscriber(input: UpdateFollowerArgsInput!): [String!]!
+    "This resolver get follower"
+    getSubscribersOfFight(input: GetFightByIdInput!): [FightFollowers]!
+    "This resolver get follower"
+    getSubscribersOfTournament(input: GetFightByIdInput!): [TournamentFollowers]!
+    "This resolver find all my invites"
+    getTournamentFighters(input: GetFightByIdInput!): [TournamentFighters]!
+    "This resolver find tour by id in db"
+    getTournamentFights(input: GetFightByIdInput!): [Fights]!
+    "This resolver find all my invites"
+    getTournamentInvites(input: GetFightByIdInput!): [Invites]!
+    "This resolver get follower"
+    getTournamentWhereIamSubscribed(input: GetFightByIdInput!): [TournamentFollowers]!
+    "This resolver find tour by id in db"
+    getTournamentsById(input: GetFightByIdInput!): Tournaments!
+    getUserById(id: String!): User!
+    getUsersByIds(input: GetUserArrayArgsInput!): [User]!
+    me: User!
+    myFiles(input: GetMyFileArgsInput!): FileType!
+}
+
+type RateFightType {
+    fighterFirst: Float!
+    fighterSecond: Float!
+    id: String!
+    userId: String!
+}
+
+type RateFighter {
+    createdAt: DateTime!
+    fightId: String
+    fighterFirst: Float
+    fighterSecond: Float
+    fights: Fights!
+    id: String!
+    isActive: Boolean!
+    updatedAt: DateTime!
+    userId: String
+}
+
+type Referee {
+    additionally: String
+    belongingClub: String
+    blog: [BlogType!]
+    brigade: Boolean
+    category: [String!]
+    countLikes: Float
+    createdAt: DateTime!
+    dateOfBirth: String
+    followers: [FollowerType!]
+    id: String!
+    independentReferee: Boolean
+    isActive: Boolean!
+    likes: [likeType!]
+    location: String
+    practice: String
+    priceFix: Float
+    pricePercent: Float
+    secondMetrist: Boolean
+    singleCombatsType: [String!]
+    subscribers: [FollowerType!]
+    updatedAt: DateTime!
+    user: User!
+}
+
+type Ring {
+    additionally: String
+    blog: [BlogType!]
+    contactPerson: String
+    contactPhone: String
+    countLikes: Float
+    createdAt: DateTime!
+    doctor: Boolean
+    followers: [FollowerType!]
+    id: String!
+    isActive: Boolean!
+    likes: [likeType!]
+    location: String
+    lockerRoom: Boolean
+    playgroundsSize: [String!]
+    playgroundsType: [String!]
+    priceHour: Float
+    pricePercent: Float
+    ringTime: [TimeTableType!]
+    ringTimeTable: RingTimeTable
+    shower: Boolean
+    subscribers: [FollowerType!]
+    updatedAt: DateTime!
+    user: User!
+}
+
+type RingTimeTable {
+    createdAt: DateTime!
+    dayOfWeek: Float!
+    endTime: String
+    id: String!
+    isActive: Boolean!
+    ring: Ring!
+    startTime: String
+    updatedAt: DateTime!
+}
+
+type StaginessFighterRating {
+    createdAt: DateTime!
+    fighterId: String
+    id: String!
+    isActive: Boolean!
+    scores: Float
+    updatedAt: DateTime!
+}
+
+type StatsFighters {
+    createdAt: DateTime!
+    draw: Float!
+    fighterId: String!
+    id: String!
+    isActive: Boolean!
+    lose: Float!
+    updatedAt: DateTime!
+    win: Float!
+}
+
+type Stream {
+    createdAt: DateTime!
+    id: String!
+    idFight: String
+    idStream: String
+    isActive: Boolean!
+    primaryServer: String
+    streamName: String
+    streamStart: Boolean
+    streamStop: Boolean
+    updatedAt: DateTime!
+    url: String
+}
+
+type Streams {
+    createdAt: DateTime!
+    fights: Fights!
+    id: String!
+    idFight: String!
+    idStream: String!
+    isActive: Boolean!
+    primaryServer: String!
+    streamName: String!
+    streamStart: Boolean!
+    streamStop: Boolean!
+    tournaments: Tournaments!
+    updatedAt: DateTime!
+    url: String!
+}
+
+type TimeTableType {
+    dayOfWeek: String!
+    endTime: String!
+    startTime: String!
+}
+
+type TournamentFighters {
+    busy: Boolean
+    createdAt: DateTime!
+    id: String!
+    idFighter: String
+    isActive: Boolean!
+    tournaments: Tournaments!
+    updatedAt: DateTime!
+}
+
+type TournamentFollowers {
+    createdAt: DateTime!
+    id: String!
+    isActive: Boolean!
+    tournaments: Tournaments
+    updatedAt: DateTime!
+    userId: String!
+}
+
+type Tournaments {
+    additionalRules: String
+    createdAt: DateTime!
+    description: String
+    fightStyle: [String!]
+    finishSetFighters: Boolean
+    finishTournament: Boolean
+    gridFormationCompleted: Boolean
+    id: String!
+    idRing: String!
+    isActive: Boolean!
+    isFights: Boolean
+    location: String
+    name: String
+    organizationFight: Boolean
+    photoURL: String
+    playgroundsSize: [String!]
+    playgroundsType: [String!]
+    publish: Boolean
+    publishTournament: Boolean
+    readyToFinishTour: Boolean
+    readyToInviteFighter: Boolean
+    readyToPublish: Boolean
+    referee: String
+    refereeRatedAllFights: Boolean
+    ring: String
+    tournamentDate: String
+    updatedAt: DateTime!
+    videographer: String
+}
+
+type User {
+    advertiser: Advertiser
+    banned: Boolean
+    bannedPeriod: Float
+    createdAt: DateTime!
+    dateBanned: DateTime
+    displayName: String
+    email: String
+    emailVerified: Boolean!
+    fan: Fan
+    fighter: Fighter
+    id: String!
+    isActive: Boolean!
+    media: UserMedia!
+    phoneNumber: String
+    photoURL: String
+    provider: String!
+    referee: Referee
+    ring: Ring
+    status: String
+    subscribers: [FollowerType!]
+    uid: String
+    updatedAt: DateTime!
+    videographer: VideoGrapher
+    vkId: String
+}
+
+type UserMedia {
+    createdAt: DateTime!
+    id: String!
+    isActive: Boolean!
+    mimetype: String
+    originalName: String
+    updatedAt: DateTime!
+    url: String
+    user: User
+}
+
+type VideoGrapher {
+    additionally: String
+    blog: [BlogType!]
+    countLikes: Float
+    createdAt: DateTime!
+    dateOfBirth: String
+    equipment: String
+    experience: String
+    followers: [FollowerType!]
+    id: String!
+    isActive: Boolean!
+    likes: [likeType!]
+    location: String
+    priceFix: Float
+    pricePercent: Float
+    subscribers: [FollowerType!]
+    updatedAt: DateTime!
+    user: User!
+}
+
+type likeType {
+    id: String!
+}
+
+input AuthWithFirebaseArgsInput {
+    accessToken: String!
+}
+
+input AuthWithVKArgsInput {
+    accessToken: String!
+    vkId: ID!
+}
+
+input BanUserArgsInput {
+    bannedPeriod: Float
+    idUser: String
+}
+
+input ChooseWinFightArgsInput {
+    fighterFirst: Boolean!
+    fighterSecond: Boolean!
+    id: ID!
+    refereeId: String!
+}
+
+input CreateMediaArgsInput {
+    fightId: ID!
+    initiatorUserId: String!
+    mimetype: String!
+    originalName: String!
+    url: String!
+}
+
+input CreateMediaInUserArgsInput {
+    mimetype: String
+    originalName: String
+    url: String
+}
+
+input CreateMediaNewsArgsInput {
+    initiatorUserId: String!
+    mimetype: String!
+    newsId: ID!
+    originalName: String!
+    url: String!
+}
+
+input CreateNewsArgsInput {
+    description: String!
+    userId: String!
+}
+
+input CreateNewsCommentByNewsIdArgsInput {
+    description: String!
+    news: String!
+    userId: String!
+}
+
+input CreateNewsRateArgsInput {
+    action: String = "dislike"
+    news: String!
+    userId: String!
+}
+
+input CreateRateFightersArgsInput {
+    fightId: String!
+    fighterFirst: Float!
+    fighterSecond: Float!
+    userId: String!
+}
+
+input CreateStreamArgsInput {
+    idFight: String
+}
+
+input CreateStreamsArgsInput {
+    idFight: String!
+}
+
+input CreateTournamentFightArgsInput {
+    idTournamentFighterFirst: String
+    idTournamentFighterSecond: String
+}
+
+input DeleteNewsArgsInput {
+    newsId: String!
+    userId: String!
+}
+
+input DeleteNewsMyCommentByCommentIdArgsInput {
+    id: String!
+    userId: String!
+}
+
+input GetBlogArgsInput {
+    id: String
+    role: String
+}
+
+input GetBlogByIdArgsInput {
+    blogId: String
+    id: String
+    role: String
+}
+
+input GetByIdInput {
+    id: String!
+}
+
+input GetDateRingArgsInput {
+    id: String
+}
+
+input GetFightByIdInput {
+    id: String!
+}
+
+input GetFileByIdArgsInput {
+    id: String!
+}
+
+input GetMyFileArgsInput {
+    userId: String!
+}
+
+input GetNewsByIdArgsInput {
+    id: String!
+}
+
+input GetNewsMyCommentsByNewsIdArgsInput {
+    news: String!
+    userId: String!
+}
+
+input GetNewsMyLikesByNewsIdArgsInput {
+    action: String = "like"
+    news: String!
+    userId: String!
+}
+
+input GetRatingArgsInput {
+    id: String
+    role: String
+}
+
+input GetRecordByIdInput {
+    id: String
+}
+
+input GetUserArrayArgsInput {
+    userArray: [String!]
+}
+
+input InviteUserArgsInput {
+    id: ID!
+    initiator: String
+    role: String!
+    userId: String!
+}
+
+input RateFightArgsInput {
+    fighterFirst: Float!
+    fighterSecond: Float!
+    id: ID!
+    userId: String!
+}
+
+input UpdateAdvertiserArgsInput {
+    additionally: String
+    contactPerson: String
+    contactPhone: String
+    id: ID
+}
+
+input UpdateAgreementFightInput {
+    additionalRules: String
+    challengeAccepted: Boolean
+    clothes: [String!]
+    countRounds: String
+    fightDate: String
+    fightStyle: [String!]
+    fighterFirst: String
+    fighterFirstRefused: Boolean
+    fighterSecond: String
+    fighterSecondAccepted: Boolean
+    fighterSecondRefused: Boolean
+    hands: [String!]
+    id: String
+    limitInParterre: Boolean
+    name: String
+    playgroundsSize: [String!]
+    playgroundsType: [String!]
+    timeBreak: String
+    timeParterre: String
+    timeRound: String
+    timeStart: String
+    useHelmet: Boolean
+    usePatch: Boolean
+}
+
+input UpdateBlogArgsInput {
+    about: String
+    createDate: String
+    id: String
+    name: String
+    photo: String
+    updateDate: String
+}
+
+input UpdateFanArgsInput {
+    additionally: String
+    dateOfBirth: String
+    id: ID
+    location: String
+    preference: [String!]
+}
+
+input UpdateFightInput {
+    additionalRules: String
+    clothes: [String!]
+    countRounds: String
+    fightDate: String
+    fightStyle: [String!]
+    fighterFirst: String
+    fighterFirstWin: Boolean
+    fighterSecond: String
+    fighterSecondWin: Boolean
+    finished: Boolean
+    hands: [String!]
+    id: String
+    lastVisitFighterFirst: String
+    lastVisitFighterSecond: String
+    lastVisitReferee: String
+    lastVisitRing: String
+    lastVisitVideographer: String
+    limitInParterre: Boolean
+    name: String
+    photoURL: String
+    playgroundsSize: [String!]
+    playgroundsType: [String!]
+    published: Boolean
+    readyToFinish: Boolean
+    referee: String
+    ring: String
+    streamURL: String
+    timeBreak: String
+    timeParterre: String
+    timeRound: String
+    timeStart: String
+    useHelmet: Boolean
+    usePatch: Boolean
+    videographer: String
+}
+
+input UpdateFighterArgsInput {
+    additionally: String
+    agent: String
+    basicStyle: [String!]
+    belongingClub: String
+    dateOfBirth: String
+    height: Float
+    id: ID
+    inSports: String
+    independentFighter: Boolean
+    isProfessional: Boolean
+    isReadyFighter: Boolean
+    location: String
+    nickname: String
+    occupation: String
+    promoVideo: String
+    readyToFightStyle: [String!]
+    sportCategory: [String!]
+    trainer: String
+    weight: Float
+}
+
+input UpdateFollowerArgsInput {
+    id: ID
+    role: String
+}
+
+input UpdateInviteArgsInput {
+    accept: Boolean!
+    id: ID!
+    refusal: Boolean!
+}
+
+input UpdateLikeArgsInput {
+    id: ID
+}
+
+input UpdateNewsArgsInput {
+    description: String!
+    id: ID!
+    shortDescription: String!
+    title: String!
+}
+
+input UpdateNotificationByIdArgsInput {
+    id: ID!
+    read: Boolean!
+}
+
+input UpdateRefereeArgsInput {
+    additionally: String
+    belongingClub: String
+    brigade: Boolean
+    category: [String!]
+    dateOfBirth: String
+    id: ID
+    independentReferee: Boolean
+    location: String
+    practice: String
+    priceFix: Float
+    pricePercent: Float
+    secondMetrist: Boolean
+    singleCombatsType: [String!]
+}
+
+input UpdateRingArgsInput {
+    additionally: String
+    contactPerson: String
+    contactPhone: String
+    doctor: Boolean
+    id: ID
+    location: String
+    lockerRoom: Boolean
+    playgroundsSize: [String!]
+    playgroundsType: [String!]
+    priceHour: Float
+    pricePercent: Float
+    shower: Boolean
+}
+
+input UpdateRingDateArgsInput {
+    dayOfWeek: String
+    endTime: String
+    startTime: String
+}
+
+input UpdateSubscribeFightArgsInput {
+    idFight: String!
+    idUser: String!
+}
+
+input UpdateSubsribeTournamentArgsInput {
+    idTournament: String!
+    idUser: String!
+}
+
+input UpdateTournametsInput {
+    additionalRules: String
+    description: String
+    fightStyle: [String!]
+    finishTournament: Boolean
+    idRing: String
+    idTournaments: String
+    location: String
+    name: String
+    organizationFight: Boolean
+    photoURL: String
+    playgroundsSize: [String!]
+    playgroundsType: [String!]
+    publish: Boolean
+    publishTournament: Boolean
+    readyToFinishTour: Boolean
+    ring: String
+    tournamentDate: String
+}
+
+input UpdateUserArgsInput {
+    displayName: String
+    email: String
+    id: ID
+    phoneNumber: String
+    photoURL: String
+}
+
+input UpdateVideographerArgsInput {
+    additionally: String
+    dateOfBirth: String
+    equipment: String
+    experience: String
+    id: ID
+    location: String
+    priceFix: Float
+    pricePercent: Float
+}
+
+
+"A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format."
+scalar DateTime
